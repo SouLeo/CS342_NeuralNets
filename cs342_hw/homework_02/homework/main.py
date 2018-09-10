@@ -1,23 +1,25 @@
 import torch.nn as nn
 
 class MainLinear(nn.Module):
-    def __init__(self, input_dim):
+    def __init__(self):
     
         super(MainLinear, self).__init__()
-       
-        self.input_dim = input_dim
-        self.linear = nn.Linear(input_dim, 1)
+      
+        self.linear = nn.Linear(2,2)
+        self.sigmoid = nn.Sigmoid()
 
-        def forward(self, x):
-            linear_transform = self.linear(x)
-            return linear_transform 
+    def forward(self, x):
+        linear_transform = self.linear(x)
+        sigmoid = self.sigmoid(linear_transform)
 
+        return linear_transform, sigmoid
+   
 class MainDeep(nn.Module):
     def __init__(self):
         super(MainDeep, self).__init__()
-            '''
-            Your code here
-            '''
+        '''
+        Your code here
+        '''
 
     def forward(self, x):
         '''
