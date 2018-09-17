@@ -5,7 +5,7 @@ class MainLinear(nn.Module):
     
         super(MainLinear, self).__init__()
       
-        self.linear = nn.Linear(2,2)
+        self.linear = nn.Linear(2,2) # 2 dim input because 2 coord. 2 dim out because one hot.
         self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):

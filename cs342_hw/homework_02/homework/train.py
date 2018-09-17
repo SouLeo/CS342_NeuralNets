@@ -16,7 +16,7 @@ def train_linear(model):
 
     labels[:,1] = torch.floor(inputs[:,0]**2 + inputs[:,1]**2)  # generates output of tensor 
     labels[:,0] = torch.add(-labels[:,1], 1) 
-    
+
 #    labels[:,0] = floor(inputs[:,0]**2 + inputs[:,1]**2)  # generates output of tensor 
 #    labels[:,1] = -labels[:,0] + 1
 
@@ -44,6 +44,8 @@ def train_linear(model):
             running_loss += loss.item()
         print('Epoch %d, loss:%.4f' % (ep+1, running_loss/100))
         running_loss = 0
+    print('Model State --->')
+    print(model.state_dict())
 
     # Save the trained model
     dirname = os.path.dirname(os.path.abspath(__file__)) # Do NOT modify this line
